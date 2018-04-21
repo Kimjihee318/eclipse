@@ -1,0 +1,82 @@
+{
+  "name": "eclipse",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "main": "dist/eclipse.umd.js",
+  "typings": "dist/types/eclipse.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "akngs <jania902@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverage": true
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
+    "@types/three": "^0.91.10",
+    "colors": "^1.2.1",
+    "cross-env": "^5.0.1",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.4",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.12.1",
+    "prompt": "^1.0.0",
+    "replace-in-file": "^3.4.0",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.58.1",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.13.0",
+    "ts-jest": "^22.4.4",
+    "ts-node": "^6.0.0",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.12.0",
+    "tslint-config-standard": "^7.0.0",
+    "typedoc": "^0.11.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "three": "^0.91.0"
+  }
+}

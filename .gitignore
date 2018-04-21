@@ -1,0 +1,13 @@
+## Javascript
+coverage/
+dist/
+node_modules/
+.rpt2_cache/
+*.log
+
+## OS specifics
+.DS_Store
+
+## IDEs
+.vscode
+.idea
